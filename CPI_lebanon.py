@@ -75,7 +75,7 @@ with col3:
                 st.markdown(f'<p style="text-align:left;font-style: italic;color:#0d0d0c;font-family:Arial;font-size:15px;border-radius:0%;">Needed Data Month: '+ str(month) + ' '+str(missing_year)+'</p>', unsafe_allow_html=True)
     else: #convert to number
         #month, year, space1, space2, space3=st.columns(5)
-        month=st.selectbox("Month", ("January", "February", "March", "April", "May", "June", "July", "August", "October", "November", "December"))
+        month=st.selectbox("Month", ("January", "February", "March", "April", "May", "June", "July", "August",  "September","October", "November", "December"))
         #year=st.selectbox("Year",("2010", "2011","2012","2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022"), index=12)
         year=str(st.number_input('Year', min_value=2010, step=1, value=2020))
         st.write("The specified month is", month,", ", year)
