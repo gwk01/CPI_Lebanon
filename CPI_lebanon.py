@@ -17,8 +17,17 @@ import streamlit.components.v1 as components
 from dateutil import relativedelta
 st.set_page_config(layout="wide")
 
+AWS_S3_BUCKET = "cpistorage"
+AWS_ACCESS_KEY_ID = "AKIAQRKKV64VAWUTNL76"
+AWS_SECRET_ACCESS_KEY  = "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"
+
 data=pd.read_excel('CPI raw rebased series 2021.xlsx', sheet_name='Sheet1')
-portal=pd.read_excel('Portal_Data_0306.xlsx', sheet_name='1 Table')
+#portal=pd.read_excel('Portal_Data_0306.xlsx', sheet_name='1 Table')
+portal = pd.read_excel('s3://cpistorage/Portal_Data_0306.xlsx', sheet_name='1 Table',
+                       storage_options={
+        "key": AWS_ACCESS_KEY_ID,
+        "secret": AWS_SECRET_ACCESS_KEY,
+        })
 #st.dataframe(data)
 #st.dataframe(portal)
 #st.markdown(f'<p style="text-align:center; background-color:#f5f5ed;color:#0d0d0c;font-family:Arial Black;font-size:40px;border-radius:0%;">CPI</p>', unsafe_allow_html=True)
