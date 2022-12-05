@@ -523,7 +523,7 @@ if submit:
         df.to_excel('CPI_online.xlsx', sheet_name='Sheet1')
 	#send email
         fromaddr = 'koteichghina@gmail.com'
-        toaddr = ['ghina.koteich@un.org','skaini@un.org']
+        toaddr = ['ghina.koteich@un.org']
 
         msg = MIMEMultipart()
 
