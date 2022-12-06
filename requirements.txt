@@ -4,7 +4,4 @@ datetime
 python-dateutil
 pillow
 openpyxl
-io
-os
-boto3
 
