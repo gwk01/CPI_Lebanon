@@ -19,7 +19,7 @@ st.set_page_config(layout="wide")
 
 AWS_S3_BUCKET = "cpistorage"
 key_id = st.secrets.aws_credentials.AWS_ACCESS_KEY_ID
-secret_id  = st.secrets.aws_credentials.AWS_SECRET_KEY_ID
+secret_id  = st.secrets.aws_credentials.AWS_SECRET_ACCESS_KEY
 
 data=pd.read_excel('CPI raw rebased series 2021.xlsx', sheet_name='Sheet1')
 #portal=pd.read_excel('Portal_Data_0306.xlsx', sheet_name='1 Table')
