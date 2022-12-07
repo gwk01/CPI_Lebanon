@@ -83,7 +83,7 @@ with col3:
     else: #convert to number
         #month, year, space1, space2, space3=st.columns(5)
         month=st.selectbox("Month", ("January", "February", "March", "April", "May", "June", "July", "August",  "September","October", "November", "December"))
-        #year=st.selectbox("Year",("2010", "2011","2012","2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022"), index=12)
+        #year=st.selectbox("Year",("2010", "2011","2012","2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022","2023"), index=12)
         year=str(st.number_input('Year', min_value=2010, step=1, value=2020))
         st.write("The specified month is", month,", ", year)
         missing_data=month+' '+year
