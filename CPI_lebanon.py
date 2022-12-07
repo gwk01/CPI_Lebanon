@@ -11,16 +11,20 @@ from email.mime.text import MIMEText
 from email.mime.base import MIMEBase
 from email import encoders
 #import win32com.client as win32
-#import os
+import os
 
 import streamlit.components.v1 as components
 from dateutil import relativedelta
 st.set_page_config(layout="wide")
 
-
+AWS_S3_BUCKET = "cpistorage"
+key_id = st.secrets.aws_credentials.AWS_ACCESS_KEY_ID
+secret_id  = st.secrets.aws_credentials.AWS_SECRET_KEY_ID
 
 data=pd.read_excel('CPI raw rebased series 2021.xlsx', sheet_name='Sheet1')
-portal=pd.read_excel('Portal_Data_0306.xlsx', sheet_name='1 Table')
+#portal=pd.read_excel('Portal_Data_0306.xlsx', sheet_name='1 Table')
+portal=pd.read_excel('s3://cpistorage/Portal_Data_0306.xlsx', sheet_name='1 Table',
+                       storage_options={"key": key_id,"secret": secret_id,})
 
 #st.dataframe(data)
 #st.dataframe(portal)
