@@ -486,7 +486,8 @@ if submit:
             portal[missing_date_data][(portal['Country']==country)&(portal['CPI groups']=='Education')]=float(edu_cpi)
             portal[missing_date_data][(portal['Country']==country)&(portal['CPI groups']=='Restaurants and accommodation services')]=float(rest_cpi)
             portal[missing_date_data][(portal['Country']==country)&(portal['CPI groups']=='Miscellaneous goods and services')]=float(mis_cpi)
-        portal.to_excel('Portal_Data_0306.xlsx', sheet_name='1 Table')
+        portal.to_excel('s3://cpistorage/Portal_Data_0306.xlsx', sheet_name='1 Table',
+                       storage_options={"key": key_id,"secret": secret_id,})
         try:
             data['Year'][(data['Country']==country)]=float(base_year_new_str)
             data['Food and non-alcoholic beverages'][(data['Country']==country)]=float(new_food_weight)
