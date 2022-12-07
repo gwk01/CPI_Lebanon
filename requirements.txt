@@ -4,4 +4,4 @@ datetime
 python-dateutil
 pillow
 openpyxl
-
+s3fs<=0.4
